@@ -1,5 +1,5 @@
 # README
-This is the demo app for Mukuru currencies and exchange rates
+This is the demo app for Mukuru Financial Services on currencies and exchange rates
 
 Installation
 ============
