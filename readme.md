@@ -62,6 +62,7 @@ Currencies GET - http://localhost/api/currencies
 Discounts GET - http://localhost/api/discounts
 Surcharges GET - http://localhost/api/surcharges
 Exchange Rates GET - http://localhost/api/xrates
+External Exchange Rates GET - http://localhost/api/xrates (uses quotes from http://apilayer.net/api/live)
 ```
 
 Querying SQLite Database
