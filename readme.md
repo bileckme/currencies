@@ -17,7 +17,7 @@ Once the composer installation is complete, launch the laravel web server:
 
 `sudo php artisan serve --host=localhost --port=80`
 
-Go to [Currencies](http://localhost/domain/api/currencies) on your web browser.
+Go to [Currencies](http://localhost/currencies) on your web browser.
 
 
 Database
