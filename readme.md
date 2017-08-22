@@ -1,25 +1,57 @@
-## Laravel PHP Framework
+# README
+This is the demo app for Mukuru currencies and exchange rates
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Installation
+============
+To deploy the application, run the following command:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+`git clone https://github.com/bileckme/mukuru-currencies.git`
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+`cd mukuru-currencies`
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+To install the code, run command:
 
-## Official Documentation
+`composer install`
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+Once the composer installation is complete, launch the laravel web server:
 
-### Contributing To Laravel
+`sudo php artisan serve --host=localhost --port=80`
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+Go to [Currencies](http://localhost/domain/api/currencies) on your web browser.
 
-### License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+Database
+========
+The database use is sqlite database, but a MySQL database can be use simply by changing the configuration under the path
+`src/config/database.php`
+
+Change the default driver to mysql to switch to a mysql database server.
+
+e.g
+
+```
+return array(
+  'default' => 'api',
+  'connections' => array(
+
+    'api'        => array(
+      'driver'    => 'mysql',
+      'host'      => 'localhost',
+      'database'  => 'api',
+      'username'  => 'root',
+      'password'  => '',
+      'charset'   => 'utf8',
+      'collation' => 'utf8_unicode_ci',
+      'prefix'    => '',
+    ),
+
+    'sqlite' => array(
+      'driver'   => 'sqlite',
+      'database' => __DIR__.'/../database/api.db',
+      'prefix'   => '',
+    ),
+  ),
+  'migrations' => 'migrations'
+);
+```
+
