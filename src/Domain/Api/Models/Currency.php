@@ -19,9 +19,9 @@ class Currency
 
     public function getExternalExchangeRates()
     {
-        $accessPoint = "http://apilayer.net/api/live?access_key=cb56ae87034271a39b64192fdb1046a4&currencies=ZAR,GBP,EUR,KES&source=USD&format=1";
+        $endPoint = "http://apilayer.net/api/live?access_key=cb56ae87034271a39b64192fdb1046a4&currencies=ZAR,GBP,EUR,KES&source=USD&format=1";
 
-        $json = json_decode(file_get_contents($accessPoint), true);
+        $json = json_decode(file_get_contents($endPoint), true);
         return ($json['quotes']);
     }
 
