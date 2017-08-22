@@ -1,4 +1,4 @@
-{{ Form::open(['url' => '/domain/api/currencies', 'method' => 'POST']) }}
+{{ Form::open(['url' => '/currencies', 'method' => 'POST']) }}
 
 Purchase: <input type="text" name="amount" value="{{ Input::has('amount') ? Input::get('amount') : '1.00' }}" size="6" /> <b>USD</b> in
 <select name="currencies">
