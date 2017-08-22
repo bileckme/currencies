@@ -10,11 +10,19 @@ class Currency
     public function getCurrencies()
     {
         return [
-          'ZAR' => 'South African Rand (ZAR)',
-          'GBP' => 'British Pound (GBP)',
-          'EUR' => 'Euro (EUR)',
-          'KES' => 'Kenyan Shillings (KES)',
+          'USDZAR' => 'South African Rand (ZAR)',
+          'USDGBP' => 'British Pound (GBP)',
+          'USDEUR' => 'Euro (EUR)',
+          'USDKES' => 'Kenyan Shillings (KES)',
         ];
+    }
+
+    public function getExternalExchangeRates()
+    {
+        $accessPoint = "http://apilayer.net/api/live?access_key=cb56ae87034271a39b64192fdb1046a4&currencies=ZAR,GBP,EUR,KES&source=USD&format=1";
+
+        $json = json_decode(file_get_contents($accessPoint), true);
+        return ($json['quotes']);
     }
 
     /**
@@ -24,10 +32,10 @@ class Currency
     public function getExchangeRates()
     {
         return [
-          'ZAR' => 13.3054,
-          'GBP' => 0.651178,
-          'EUR' => 0.884872,
-          'KES' => 103.860,
+          'USDZAR' => 13.3054,
+          'USDGBP' => 0.651178,
+          'USDEUR' => 0.884872,
+          'USDKES' => 103.860,
         ];
     }
 
@@ -38,10 +46,10 @@ class Currency
     public function getSurcharges()
     {
         return [
-          'ZAR' => 7.5,
-          'GBP' => 5,
-          'EUR' => 5,
-          'KES' => 2.5,
+          'USDZAR' => 7.5,
+          'USDGBP' => 5,
+          'USDEUR' => 5,
+          'USDKES' => 2.5,
         ];
     }
 
@@ -52,10 +60,10 @@ class Currency
     public function getDiscounts()
     {
         return [
-          'ZAR' => 0,
-          'GBP' => 0,
-          'EUR' => 2,
-          'KES' => 0,
+          'USDZAR' => 0,
+          'USDGBP' => 0,
+          'USDEUR' => 2,
+          'USDKES' => 0,
         ];
     }
 

@@ -458,7 +458,7 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
     }
     public static function getBootstrapFile()
     {
-        return '/home/biyi/Downloads/currencies/vendor/laravel/framework/src/Illuminate/Foundation' . '/start.php';
+        return '/home/biyi/Downloads/mukuru-currencies/vendor/laravel/framework/src/Illuminate/Foundation' . '/start.php';
     }
     public function startExceptionHandling()
     {

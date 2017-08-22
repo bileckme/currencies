@@ -61,11 +61,11 @@ class OrderSubscriber
     {
         switch($order->currency)
         {
-            case 'GBP':
+            case 'USDGBP':
                 $this->sendEmail($order);
                 break;
 
-            case 'EUR':
+            case 'USDEUR':
                 $this->applyDiscount($order, $order->currency);
                 break;
         }

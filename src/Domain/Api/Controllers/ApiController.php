@@ -123,6 +123,26 @@ class ApiController extends BaseController
       return Collection::make($rates);
     }
 
+    public function getExternalExchangeRates()
+    {
+        $parameters = $this->request->input();
+
+        $validator = (new CurrencyValidator())->validate($parameters);
+
+        if ($validator->fails()) {
+            return Collection::make(
+              [
+                'error'   => 'Bad request',
+                'code'    => 400,
+                'message' => $validator->getMessageBag(),
+              ]
+            );
+        }
+        $currency = new Currency();
+        $rates = $currency->getExternalExchangeRates();
+        return Collection::make($rates);
+    }
+
     /**
      * Get discounts
      * @return static
