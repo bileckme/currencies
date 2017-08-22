@@ -50,7 +50,8 @@ class CurrencyController extends BaseController
         $result = $currency->calculate($currencySelection, $amount);
 
         $currencies = $currency->getCurrencies();
-        $exchangeRates = $currency->getExchangeRates();
+        //$exchangeRates = $currency->getExtExchangeRates(); # commented out in favor of the live api
+        $exchangeRates = $currency->getExternalExchangeRates();
         $surcharges = $currency->getSurcharges();
         $orderRepository = new OrderRepository(new Order);
 
