@@ -1,11 +1,11 @@
 # README
-This is the demo app for Mukuru Financial Services on currencies and exchange rates
+This is the demo app on currencies and exchange rates
 
 Installation
 ============
 To deploy the application, run the following command:
 
-`git clone https://github.com/bileckme/mukuru-currencies.git`
+`git clone https://github.com/bileckme/currencies.git`
 
 `cd mukuru-currencies`
 
